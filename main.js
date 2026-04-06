@@ -5,20 +5,24 @@ const formGroup = document.querySelector('.form__group')
 const formInput = document.querySelector('.form__input')
 const formError = document.querySelector('.form__error')
 const buttonSubmit = document.querySelector('.btn__submit')
-const buttonDimiss = document.querySelector('.btn__dimiss')
+const buttondismiss =
+  document.querySelector('.btn__dismiss')
 const successModal = document.getElementById('successModal')
 
 function handleInputChange() {
   if (formGroup?.classList?.contains('invalid')) {
     formGroup?.classList?.remove('invalid')
+
+    if (formError) {
+      formError.innerText = ''
+    }
   }
 }
 
 function handleSubmit(e) {
   e.preventDefault()
 
-  const formData = new FormData(form)
-
+  const formData = new FormData(e.currentTarget)
   const email = formData?.get('email')
 
   if (!email?.trim()) {
@@ -49,9 +53,11 @@ function handleSubmit(e) {
   }
 }
 
-function handleDimiss(e) {
+function handleDismiss() {
   successModal?.close()
   buttonSubmit?.setAttribute('aria-expanded', 'false')
+  form?.scrollIntoView({ behavior: 'smooth' })
+
   if (formInput) {
     formInput.value = ''
   }
@@ -59,4 +65,4 @@ function handleDimiss(e) {
 
 form?.addEventListener('submit', handleSubmit)
 formInput?.addEventListener('input', handleInputChange)
-buttonDimiss?.addEventListener('click', handleDimiss)
+buttondismiss?.addEventListener('click', handleDismiss)
