@@ -46,7 +46,7 @@ function handleSubmit(e) {
   buttonSubmit?.setAttribute('aria-expanded', 'true')
 
   const emailSpan = document.querySelector(
-    '.newsletter__success-description > span',
+    '[data-email-display]',
   )
   if (emailSpan) {
     emailSpan.innerText = email

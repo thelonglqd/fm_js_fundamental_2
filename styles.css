@@ -186,7 +186,7 @@ img {
 .newsletter__success-description {
   margin-block-start: 1.5rem;
 }
-.newsletter__success-description span {
+.newsletter__success-email {
   font-weight: var(--fweight-bold);
 }
 .newsletter__success .btn__dismiss {

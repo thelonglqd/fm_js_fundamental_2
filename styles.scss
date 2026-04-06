@@ -201,10 +201,10 @@ img {
 
     &-description {
       margin-block-start: 1.5rem;
+    }
 
-      span {
-        font-weight: var(--fweight-bold);
-      }
+    &-email {
+      font-weight: var(--fweight-bold);
     }
 
     .btn__dismiss {
