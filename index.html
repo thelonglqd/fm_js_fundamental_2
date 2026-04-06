@@ -5,10 +5,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Frontend Mentor | JavaScript fundamental | Challenge 2 </title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
-  <main class="main"></main>
+  <main class="main">
+    <article class="newsletter">
+      <section class="newsletter__container">
+        <header class="newsletter__hero">
+          <picture>
+            <source srcset="assets/images/illustration-sign-up-desktop.svg" media="(min-width: 64em)">
+            <source srcset="assets/images/illustration-sign-up-tablet.svg" media="(min-width: 40em)">
+            <img src="assets/images/illustration-sign-up-mobile.svg" alt="hero image">
+          </picture>
+        </header>
+
+        <section class="newsletter__content">
+          <h1 class="newsletter__title">Stay updated!</h1>
+          <div class="newsletter__information">
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul class="newsletter__benefit">
+              <li class="newsletter__benefit--item">
+                <i class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></i>
+                <span>Product discovery and building what matters</span>
+              </li>
+              <li class="newsletter__benefit--item">
+                <i class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></i>
+                <span>Measuring to ensure updates are a success</span>
+              </li>
+              <li class="newsletter__benefit--item">
+                <i class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></i>
+                <span>And much more!</span>
+              </li>
+            </ul>
+          </div>
+
+          <form action="" novalidate class="newsletter__form form">
+            <div class="form__group">
+              <div class="form__group-header">
+                <label class="form__label" for="email">Email address</label>
+                <span class="form__error"></span>
+              </div>
+              <input name="email" class="form__input" type="email" placeholder="email@company.com" id="email">
+            </div>
+            <button aria-controls="successModal" aria-expanded="false" class="btn btn__submit" type="submit">Subsribe to
+              monthly newsletter</button>
+          </form>
+        </section>
+      </section>
+    </article>
+    <dialog id="successModal" class="newsletter__success">
+      <div class="newsletter__success-info">
+        <div class="newsletter__success-icon">
+          <img src="assets/images/icon-success.svg" alt="">
+        </div>
+        <h2 class="newsletter__success-title">
+          Thanks for subscribing!
+        </h2>
+        <p class="newsletter__success-description">
+          A confirmation email has been sent to <span>example@gmail.com</span>. Please open it and click the button
+          inside to
+          confirm your subscription.
+        </p>
+      </div>
+      <button class="btn btn__dimiss" type="button">Dimiss and Back</button>
+
+    </dialog>
+  </main>
 </body>
 
 </html>
