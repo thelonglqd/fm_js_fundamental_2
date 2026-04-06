@@ -23,9 +23,11 @@ function handleSubmit(e) {
   e.preventDefault()
 
   const formData = new FormData(e.currentTarget)
-  const email = formData?.get('email')
 
-  if (!email?.trim()) {
+  const rawEmail = formData?.get('email')
+  const email = String(rawEmail || '').trim()
+
+  if (!email) {
     formGroup?.classList?.add('invalid')
 
     if (formError) {
@@ -44,6 +46,7 @@ function handleSubmit(e) {
 
   successModal?.showModal()
   buttonSubmit?.setAttribute('aria-expanded', 'true')
+  buttondismiss?.focus()
 
   const emailSpan = document.querySelector(
     '[data-email-display]',
@@ -56,7 +59,7 @@ function handleSubmit(e) {
 function handleDismiss() {
   successModal?.close()
   buttonSubmit?.setAttribute('aria-expanded', 'false')
-  form?.scrollIntoView({ behavior: 'smooth' })
+  buttonSubmit?.focus()
 
   if (formInput) {
     formInput.value = ''

@@ -5,6 +5,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  // Reset standard for animation
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
 }
 
 :root {
@@ -177,15 +183,14 @@ img {
     }
 
     padding: 1.5rem;
-    width: min(100%, 40em);
-    height: 70vh;
+    width: min(100%, 30em);
+    height: 80vh;
     border-radius: 16px;
 
     margin: var(--margin-container);
 
-    @media (min-width: 40em) {
-      height: 45vh;
-      width: 45vh;
+    @media (min-width: 64em) {
+      height: 50vh;
     }
 
     &-icon {

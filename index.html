@@ -28,15 +28,15 @@
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
             <ul class="newsletter__benefit">
               <li class="newsletter__benefit--item">
-                <i class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></i>
+                <div class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></div>
                 <span>Product discovery and building what matters</span>
               </li>
               <li class="newsletter__benefit--item">
-                <i class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></i>
+                <div class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></div>
                 <span>Measuring to ensure updates are a success</span>
               </li>
               <li class="newsletter__benefit--item">
-                <i class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></i>
+                <div class="newsletter__tick-icon"><img src="assets/images/icon-list.svg" alt=""></div>
                 <span>And much more!</span>
               </li>
             </ul>
@@ -46,26 +46,27 @@
             <div class="form__group">
               <div class="form__group-header">
                 <label class="form__label" for="email">Email address</label>
-                <span class="form__error"></span>
+                <span class="form__error" aria-live="polite"></span>
               </div>
               <input name="email" class="form__input" type="email" placeholder="email@company.com" id="email">
             </div>
-            <button aria-controls="successModal" aria-expanded="false" class="btn btn__submit" type="submit">Subsribe to
-              monthly newsletter</button>
+            <button aria-controls="successModal" aria-expanded="false" class="btn btn__submit" type="submit">Subscribe
+              to monthly newsletter</button>
           </form>
         </section>
       </section>
     </article>
-    <dialog id="successModal" class="newsletter__success">
+    <dialog id="successModal" class="newsletter__success" aria-labelledby="success-title">
       <div class="newsletter__success-info">
         <div class="newsletter__success-icon">
           <img src="assets/images/icon-success.svg" alt="">
         </div>
-        <h2 class="newsletter__success-title">
+        <h2 class="newsletter__success-title" id="success-title">
           Thanks for subscribing!
         </h2>
         <p class="newsletter__success-description">
-          A confirmation email has been sent to <span class="newsletter__success-email" data-email-display></span>.
+          A confirmation email has been sent to <span class="newsletter__success-email" data-email-display
+            aria-live="polite"></span>.
           Please open it and click the button
           inside to
           confirm your subscription.

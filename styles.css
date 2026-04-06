@@ -5,6 +5,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
 }
 
 :root {
@@ -163,15 +167,14 @@ img {
 }
 .newsletter__success {
   padding: 1.5rem;
-  width: min(100%, 40em);
-  height: 70vh;
+  width: min(100%, 30em);
+  height: 80vh;
   border-radius: 16px;
   margin: var(--margin-container);
 }
-@media (min-width: 40em) {
+@media (min-width: 64em) {
   .newsletter__success {
-    height: 45vh;
-    width: 45vh;
+    height: 50vh;
   }
 }
 .newsletter__success-icon {
