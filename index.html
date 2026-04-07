@@ -12,7 +12,7 @@
 
 <body>
   <main class="main">
-    <article class="newsletter">
+    <section class="newsletter">
       <section class="newsletter__container">
         <header class="newsletter__hero">
           <picture>
@@ -46,16 +46,17 @@
             <div class="form__group">
               <div class="form__group-header">
                 <label class="form__label" for="email">Email address</label>
-                <span class="form__error" aria-live="polite"></span>
+                <span id="email-error" class="form__error" aria-live="polite"></span>
               </div>
-              <input name="email" class="form__input" type="email" placeholder="email@company.com" id="email">
+              <input aria-invalid="false" aria-describedby="email-error" name="email" class="form__input" type="email"
+                placeholder="email@company.com" id="email">
             </div>
-            <button aria-controls="successModal" aria-expanded="false" class="btn btn__submit" type="submit">Subscribe
+            <button class="btn btn__submit" type="submit">Subscribe
               to monthly newsletter</button>
           </form>
         </section>
       </section>
-    </article>
+    </section>
     <dialog id="successModal" class="newsletter__success" aria-labelledby="success-title">
       <div class="newsletter__success-info">
         <div class="newsletter__success-icon">

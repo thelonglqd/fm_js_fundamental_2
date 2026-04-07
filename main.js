@@ -5,13 +5,14 @@ const formGroup = document.querySelector('.form__group')
 const formInput = document.querySelector('.form__input')
 const formError = document.querySelector('.form__error')
 const buttonSubmit = document.querySelector('.btn__submit')
-const buttondismiss =
+const buttonDismiss =
   document.querySelector('.btn__dismiss')
 const successModal = document.getElementById('successModal')
 
 function handleInputChange() {
   if (formGroup?.classList?.contains('invalid')) {
     formGroup?.classList?.remove('invalid')
+    formInput?.setAttribute('aria-invalid', 'false')
 
     if (formError) {
       formError.innerText = ''
@@ -29,6 +30,7 @@ function handleSubmit(e) {
 
   if (!email) {
     formGroup?.classList?.add('invalid')
+    formInput?.setAttribute('aria-invalid', 'true')
 
     if (formError) {
       formError.innerText = 'Email is required'
@@ -38,6 +40,7 @@ function handleSubmit(e) {
 
   if (!emailRegex.test(email)) {
     formGroup?.classList?.add('invalid')
+    formInput?.setAttribute('aria-invalid', 'true')
     if (formError) {
       formError.innerText = 'Valid email required'
     }
@@ -45,8 +48,7 @@ function handleSubmit(e) {
   }
 
   successModal?.showModal()
-  buttonSubmit?.setAttribute('aria-expanded', 'true')
-  buttondismiss?.focus()
+  buttonDismiss?.focus()
 
   const emailSpan = document.querySelector(
     '[data-email-display]',
@@ -58,7 +60,6 @@ function handleSubmit(e) {
 
 function handleDismiss() {
   successModal?.close()
-  buttonSubmit?.setAttribute('aria-expanded', 'false')
   buttonSubmit?.focus()
 
   if (formInput) {
@@ -68,4 +69,4 @@ function handleDismiss() {
 
 form?.addEventListener('submit', handleSubmit)
 formInput?.addEventListener('input', handleInputChange)
-buttondismiss?.addEventListener('click', handleDismiss)
+buttonDismiss?.addEventListener('click', handleDismiss)
